@@ -1,38 +1,29 @@
 import React from "react";
-import Directory from "./components/directory/directory.components";
+import { Routes, Route } from "react-router-dom";
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
+import SignIn from "./routes/sign-in/sign-in.component";
+
+const Shop = () => {
+  return (
+    <div>
+      <h1>I want to shop</h1>
+    </div>
+  );
+};
 
 const App = () => {
-  // optemized category to avoid repetitive hard coding elements
-
-  const categories = [
-    {
-      id: 1,
-      title: "hats",
-      imageUrl: "https://i.ibb.co/cvpntL1/hats.png"
-    },
-    {
-      id: 2,
-      title: "jackets",
-      imageUrl: "https://i.ibb.co/px2tCc3/jackets.png"
-    },
-    {
-      id: 3,
-      title: "sneakers",
-      imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png"
-    },
-    {
-      id: 4,
-      title: "womens",
-      imageUrl: "https://i.ibb.co/GCCdy8t/womens.png"
-    },
-    {
-      id: 5,
-      title: "mens",
-      imageUrl: "https://i.ibb.co/R70vBrQ/men.png"
-    }
-  ];
-
-  return <Directory categories={categories} />;
+  return (
+    // Tells the App to leverage some routes to show in the page.
+    <Routes>
+      {/* When a route is match with a path value of string, render the element */}
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="shop" element={<Shop />} />
+        <Route path="sign-in" element={<SignIn />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default App;
