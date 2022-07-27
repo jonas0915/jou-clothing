@@ -14,7 +14,7 @@ const Shop = () => {
 
 const App = () => {
   return (
-    // Tells the App to leverage some routes to show in the page.
+    //Routes Tells the App to leverage some routes to show in the page.
     <Routes>
       {/* When a route is match with a path value of string, render the element */}
       <Route path="/" element={<Navigation />}>
