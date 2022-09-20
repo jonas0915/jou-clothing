@@ -31,6 +31,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+// eslint-disable-next-line
 const firebaseApp = initializeApp(firebaseConfig);
 // to able to use authentication from firebase
 // googleAuthProvider is a class from firebaseAuthentication and connected to googleAuth
